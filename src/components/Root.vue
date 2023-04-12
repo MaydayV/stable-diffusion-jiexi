@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="my-4 pt-4">
-        <a class="text-gray-500" href="https://www.huitu.io" target="_blank">收藏！AI绘图学习资源站！</a>
+        <a class="text-gray-500" href="https://www.huitu.io" target="_blank">🔥收藏！AI绘图学习资源站！</a>
       </div>
     </div>
 
