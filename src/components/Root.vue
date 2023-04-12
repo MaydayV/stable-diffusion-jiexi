@@ -1,8 +1,8 @@
 <template>
   <div class="text-center p-6 max-w-1024px mx-auto">
-    <h1 class="font-bold text-3xl">Stable Diffusion 法术解析</h1>
+    <h1 class="font-bold text-3xl">Stable Diffusion 解析工具</h1>
     <p class="text-gray-500 my-2 text-sm">
-      从 Stable Diffusion 生成的图片读取 prompt / Stable Diffusion 模型解析
+      从 Stable Diffusion 生成的图片读取 prompt 提示词及参数 / Stable Diffusion 模型类型解析
     </p>
     <div v-if="imgFileRef" class="my-6">
       <div class="bg-white max-w-720px mx-auto border border-gray-300 p-2" v-if="imageRef">
@@ -72,18 +72,15 @@
         </div>
       </div>
       <div class="my-4 pt-4">
-        <a class="text-gray-500" href="https://www.bilibili.com/read/cv21362202" target="_blank">图文详解！最全模型用法</a>
+        <a class="text-gray-500" href="https://www.huitu.io" target="_blank">收藏！AI绘图学习资源站！</a>
       </div>
     </div>
 
     <p class="text-gray-500 my-2 text-sm">
-      *运算完全在你的电脑上运行不会上传到云端
+      *完全在电脑本地运行，不会上传到云端。
     </p>
     <div class="my-4 pt-4">
-      如果您觉得本项目对您有帮助 请在 →
-      <a class="inline-block text-sm text-gray-500"
-        href="https://github.com/Akegarasu/stable-diffusion-inspector">GitHub</a>
-      ←上点个star
+    本工具由 AI绘图（huitu.io）提供服务
       <br />
       <span class="inline-block mt-2 text-sm text-gray-500">
         Made with ❤️ by
@@ -303,7 +300,7 @@ async function readFileInfo(file) {
   if (nai.length == 0) {
     ok.push({
       key: "提示",
-      value: "这可能不是一张 Stable Diffusion 生成的图或者不是原图, 经过了压缩",
+      value: "这可能不是 Stable Diffusion 生成的图或者经过传输压缩抹掉了图片信息",
     })
   }
   return ok
@@ -315,7 +312,7 @@ const handleWebUiTag = (data) => {
   let negativePrompt = promptSplit.length > 1 ? promptSplit[1] : "无";
   return [
     {
-      keyword: "提示词",
+      keyword: "正面提示词",
       text: promptSplit[0],
     },
     {
